@@ -1,10 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 const db = require("./app/middleware/db");
 global.Config = require('./app/config/default.json');
-global.AppDir = 'core';
+global.AppDir = 'admin';
 global.Fs = require('fs-extra');
 global.Path = require('path');
 global.Mongoose = require("mongoose");
@@ -15,7 +14,6 @@ var app = express();
 
 // view engine setup
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
