@@ -1,0 +1,8 @@
+{
+    "App": {
+        "PORT": 5000,
+        "ADMIN_PORT": 5050,
+        "secret": "secret",
+        "tokenExpiresTime": "2h"
+    }
+}

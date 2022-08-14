@@ -10,7 +10,7 @@ db.connect = () => {
     let mongodb = Mongoose.connection;
     
     mongodb.on('error', err => console.log("connection error: ", err));
-    mongodb.once('open', () => console.log("Mongoose connected"));
+    mongodb.once('open', () => console.log("Mongo connected"));
     
     Mongoose.set('debug', true);
     

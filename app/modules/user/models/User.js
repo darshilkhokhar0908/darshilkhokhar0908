@@ -3,7 +3,9 @@ const UserSchema = Mongoose.Schema({
     email: {type: String, unique: true},
     password: String,
     firstName: String,
-    lastName: String
+    lastName: String,
+    role: String,
+    status: String
 },{
     timestamps: true,
     toObject: {
@@ -21,7 +23,7 @@ UserSchema.post('init', function() {
 });
 
 UserSchema.pre('save', function(next) {
-    if (this.password && this.isNew) {
+    if (this.password) {
         const document = this;
         bcrypt.hash(this.password, saltRounds, function(err, hashedPassword) {
             if (err) {
